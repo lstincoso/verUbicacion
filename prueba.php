@@ -132,7 +132,7 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 11,
+          zoom: 19,
           center: new google.maps.LatLng(<?php echo $latv2. ','. $long;?>),
           mapTypeId: 'terrain'
         });
