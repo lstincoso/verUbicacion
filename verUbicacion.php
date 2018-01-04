@@ -1,11 +1,11 @@
 <?php
 
 include('db_conection.php');
-$rs=mysqli_query($dbconnect,"select * from location ");
+$rs=pg_query($dbconnect,"select * from location ");
 $objLocation = new stdClass();
 $listaLocations=[];
 
-while($row= mysqli_fetch_array($rs,MYSQL_ASSOC))
+while($row= pg_fetch_array($rs,MYSQL_ASSOC))
 {
     //echo $row['id_user'];
     $location=new stdClass();
@@ -18,7 +18,7 @@ while($row= mysqli_fetch_array($rs,MYSQL_ASSOC))
     // echo ("hola");
 }
 $objLocation->listalocations=$listaLocations;
-mysqli_close($dbconnect);
+pg_close($dbconnect);
 
     echo json_encode($objLocation);
     
